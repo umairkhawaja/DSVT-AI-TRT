@@ -22,8 +22,13 @@ link_directories(/usr/local/cuda/lib64)
 
 # tensorrt
 
-include_directories(/home/xxx/data/softwares/trt/TensorRT-8.2.1.8.Linux.x86_64-gnu.cuda-10.2.cudnn8.2/TensorRT-8.2.1.8/include)
-link_directories(/home/xxx/data/softwares/trt/TensorRT-8.2.1.8.Linux.x86_64-gnu.cuda-10.2.cudnn8.2/TensorRT-8.2.1.8/lib)
+# Inside NGC docker container or if installed using debian package
+include_directories(/usr/include/x86_64-linux-gnu/)
+link_directories(/usr/include/x86_64-linux-gnu/)
+
+# Installation via .tar package
+#include_directories(/workspace/OpenPCDet2TRT/deployment/TensorRT-8.4.3.1/include)
+#link_directories(/workspace/OpenPCDet2TRT/deployment/TensorRT-8.4.3.1/lib)
 
 
 #cnpy
